@@ -1,0 +1,40 @@
+<footer class="uk-padding uk-background-muted">
+    <div class="uk-container uk-container-medium">
+        <div class="uk-column-1-4@m">
+            <div>
+                <p class="uk-margin-small-bottom">Address</p>
+                <p>
+                    {% for item in site.data.footer.address %}
+                    {{ item }}<br>
+                    {% endfor %}
+                </p>
+            </div>
+            <div>
+                <p class="uk-margin-small-bottom">Hours</p>
+                <p>
+                    {% for item in site.data.footer.hours %}
+                    {{ item }}<br>
+                    {% endfor %}
+                </p>
+            </div>
+            <div>
+                <p class="uk-margin-small-bottom">Contact</p>
+                <p>
+                    {% for item in site.data.footer.contact %}
+                    {{ item }}<br>
+                    {% endfor %}
+                </p>
+            </div>
+            <div>
+                <p class="uk-margin-small-bottom">Follow</p>
+                {% for item in site.data.footer.follow %}
+                <a href="{{ item.url }}">{{ item.title }}</a><br>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</footer>
+
+<footer class="uk-background-secondary uk-light uk-text-center">
+    <p class="uk-margin-remove-bottom">Site by Seth Thoburn</p>
+</footer>

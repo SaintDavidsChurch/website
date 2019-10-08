@@ -1,0 +1,12 @@
+- title: Home
+  url: ''
+- title: About
+  url: '#about'
+- title: Location
+  url: '#location'
+- title: Contact
+  url: '#contact'
+- title: Documents
+  url: '#documents'
+- title: Audio
+  url: /audio

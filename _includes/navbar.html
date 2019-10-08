@@ -1,0 +1,43 @@
+<div>
+    <div class="uk-background-secondary">
+        <div class="uk-container uk-padding">
+
+            <div class="uk-text-center">
+
+                <a href="./index.html" class="uk-logo">
+                    <img style="max-height: 96px;" alt="Saint David's Church" src="./assets/images/logo-horizontal.png">
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="uk-sticky" uk-sticky>
+        <div class="uk-navbar-container">
+            <div class="uk-container">
+                <nav class="uk-navbar"
+                    uk-navbar="{&quot;align&quot;:&quot;left&quot;,&quot;boundary&quot;:&quot;!.uk-navbar-container&quot;}">
+
+                    <div class="uk-navbar-center">
+
+                        <div class="uk-margin-auto-vertical">
+                            <ul class="uk-navbar-nav">
+                                {% for item in site.data.nav %}
+                                {% if item.url == page.url %}
+                                <li class="uk-active">
+                                    <a href=".{{item.url}}" class="active">{{item.title}}</a>
+                                </li>
+                                {% else %}
+                                <li>
+                                    <a href=".{{item.url}}">{{item.title}}</a>
+                                </li>
+                                {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
