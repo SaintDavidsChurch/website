@@ -21,14 +21,14 @@
                     <div class="uk-navbar-center">
 
                         <div class="uk-margin-auto-vertical">
-                            <ul class="uk-navbar-nav">
+                            <ul class="uk-navbar-nav uk-flex-wrap">
                                 {% for item in site.data.nav %}
                                 {% if item.url == page.url %}
                                 <li class="uk-active">
                                     <a href=".{{item.url}}" class="active">{{item.title}}</a>
                                 </li>
                                 {% else %}
-                                <li>
+                                <li class="uk-align-center uk-margin-remove-top uk-margin-remove-bottom">
                                     <a href=".{{item.url}}">{{item.title}}</a>
                                 </li>
                                 {% endif %}
