@@ -28,9 +28,9 @@ url:
                     <div class="uk-width-1-1@m uk-first-column">
                         <h1 class="uk-text-center">Saint David's Church</h1>
                         <div class="uk-text-center">
-                            221 Market Street, Tomball TX
-                            <br>
-                            Sunday Worship 10 a.m.
+                            {% for item in site.data.site_copy.header %}
+                            {% if forloop.first == false %}<br>{% endif %}{{ item }}
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
