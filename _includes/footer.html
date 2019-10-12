@@ -1,35 +1,16 @@
-<footer class="uk-padding uk-background-muted uk-margin-remove-bottom">
+<footer class="uk-padding uk-background-secondary uk-margin-remove-bottom uk-margin-top">
     <div class="uk-container uk-container-medium">
-        <div class="uk-column-1-4@m">
-            <div>
-                <p class="uk-margin-small-bottom">Address</p>
-                <p>
-                    {% for item in site.data.footer.address %}
-                    {{ item }}<br>
-                    {% endfor %}
-                </p>
+        <div uk-grid>
+            <div class="uk-width-1-2">
+                <img style="max-height: 96px;" alt="Saint David's Church" src="./assets/images/logo-horizontal.png">
             </div>
-            <div>
-                <p class="uk-margin-small-bottom">Hours</p>
-                <p>
-                    {% for item in site.data.footer.hours %}
-                    {{ item }}<br>
-                    {% endfor %}
-                </p>
-            </div>
-            <div>
-                <p class="uk-margin-small-bottom">Contact</p>
-                <p>
-                    {% for item in site.data.footer.contact %}
-                    {{ item }}<br>
-                    {% endfor %}
-                </p>
-            </div>
-            <div>
-                <p class="uk-margin-small-bottom">Follow</p>
-                {% for item in site.data.footer.follow %}
-                <a href="{{ item.url }}">{{ item.title }}</a><br>
-                {% endfor %}
+            <div class="uk-width-1-2 uk-child-width-expand@m" uk-grid>
+                <div>
+                    <h3>Contact</h3>
+                    <p><a href="mailto:{{ site.data.contact.email }}">{{ site.data.contact.email }}</a></p>
+                    <p>{% for line in site.data.contact.mailing_address %}{% if forloop.first == false %}<br>{% endif %}{{ line }}{% endfor %}</p>
+                    <p>{{ site.data.contact.phone_number }}</p>
+                </div>
             </div>
         </div>
     </div>

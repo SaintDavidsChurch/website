@@ -1,0 +1,20 @@
+---
+title: Home
+layout: default
+url: /sermons
+---
+
+<div class="uk-container uk-container-small uk-margin-large-top" uk-height-viewport="offset-top: true; offset-bottom: true">
+    <h1>Sermons</h1>
+    {% assign sorted = site.data.sermons | sort: 'date' | reverse %}
+    {% for sermon in sorted %}
+    <hr>
+    <h3>{{ sermon.title }}</h3>
+    <p><i>{{ sermon.preacher }} | {{ sermon.date | date: '%B %d, %Y' }}</i></p>
+    <audio controls>
+        <source src="./assets/{{ sermon.audio_file }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <p><a href="./assets/{{ sermon.audio_file }}">Download audio</a></p>
+    {% endfor %}
+</div>

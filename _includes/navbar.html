@@ -22,7 +22,7 @@
 
                         <div class="uk-margin-auto-vertical">
                             <ul class="uk-navbar-nav uk-flex-wrap">
-                                {% for item in site.data.nav %}
+                                {% for item in site.data.navigation %}
                                 {% if item.url == page.url %}
                                 <li class="uk-active">
                                     <a href=".{{item.url}}" class="active">{{item.title}}</a>
