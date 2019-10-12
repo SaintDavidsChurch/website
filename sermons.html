@@ -15,6 +15,6 @@ url: /sermons
         <source src="./assets/{{ sermon.audio_file }}" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
-    <p><a href="./assets/{{ sermon.audio_file }}">Download audio</a></p>
+    <p><a href="./assets/{{ sermon.audio_file }}" download="./assets/{{ sermon.audio_file }}">Download audio</a></p>
     {% endfor %}
 </div>
