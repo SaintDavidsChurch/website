@@ -10,7 +10,7 @@
   date: '2019-10-06'
   preacher: Adam McIntosh
   audio_file: sermons/Adam-McIntosh_October6-2019_Luke17.1-10.mp3
-- title: The Lost Sheep and the Lost Coin (Luke 15:1-10)
-  date: '2019-09-15'
-  preacher: Adam McIntosh
-  audio_file: sermons/Adam-McIntosh_September15-2019_Luke15.1-10.mp3
+- title: name
+  date: date
+  preacher: preach
+  audio_file: audio
