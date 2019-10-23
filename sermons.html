@@ -9,7 +9,7 @@ url: /sermons
     {% assign sorted = site.data.sermons | sort: 'date' | reverse %}
     {% for sermon in sorted %}
     <hr>
-    <h3>{{ sermon.title }}</h3>
+    <a href="{{ sermon.date }}-{{ sermon.title | slugify }}"><h3>{{ sermon.title }}</h3></a>
     <p><i>{{ sermon.preacher }} | {{ sermon.date | date: '%B %d, %Y' }}</i></p>
     <audio controls>
         <source src="./assets/{{ sermon.audio_file }}" type="audio/mpeg">
