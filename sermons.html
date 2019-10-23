@@ -8,8 +8,8 @@ url: /sermons
     <h1>Sermons</h1>
     {% assign sorted = site.data.sermons | sort: 'date' | reverse %}
     {% for sermon in sorted %}
-    <hr>
-    <a href="/sermons/{{ sermon.date }}-{{ sermon.title | slugify }}"><h3>{{ sermon.title }}</h3></a>
+    <hr id="{{ sermon.date }}-{{ sermon.title | slugify }}">
+    <a href="/sermons#{{ sermon.date }}-{{ sermon.title | slugify }}"><h3>{{ sermon.title }}</h3></a>
     <p><i>{{ sermon.preacher }} | {{ sermon.date | date: '%B %d, %Y' }}</i></p>
     <audio controls>
         <source src="/assets/{{ sermon.audio_file }}" type="audio/mpeg">
