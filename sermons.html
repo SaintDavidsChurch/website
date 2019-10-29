@@ -27,7 +27,7 @@ url: /sermons
     <a href="/sermons#{{ sermon.date }}-{{ sermon.title | slugify }}"><h3>{{ sermon.title }}</h3></a>
     <p><i>{{ sermon.preacher }} | {{ sermon.date | date: '%B %d, %Y' }}</i></p>
     <audio controls>
-        <source src="/assets/{{ sermon.audio_file }}" type="audio/mpeg">
+        <source src="{% unless sermon.audio_file contains '://' %}https://saintdavids.church/assets/{% endunless %}{{ sermon.audio_file }}" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
     <p><a href="{% unless sermon.audio_file contains '://' %}https://saintdavids.church/assets/{% endunless %}{{ sermon.audio_file }}" download="{% unless sermon.audio_file contains '://' %}https://saintdavids.church/assets/{% endunless %}{{ sermon.audio_file }}">Download audio</a></p>
