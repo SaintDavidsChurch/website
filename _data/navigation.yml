@@ -1,12 +1,14 @@
 - title: Home
-  url: '/'
+  url: /
 - title: About
-  url: '/#about'
+  url: /#about
 - title: Location
-  url: '/#location'
+  url: /#location
 - title: Contact
-  url: '/#contact'
+  url: /#contact
 - title: Documents
-  url: '/#documents'
+  url: /#documents
 - title: Sermons
   url: /sermons
+- title: govtseries
+  url: /govtseries
