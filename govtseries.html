@@ -1,0 +1,36 @@
+---
+title: Civil Government sermon series (June-July 2020)
+subtitle: Pastor Adam McIntosh
+layout: default
+url: /sermons
+---
+
+<style>
+    a.anchor {
+        display: block;
+        position: relative;
+        visibility: hidden;
+    }
+
+    @media (min-width: 960px) {
+        a.anchor {
+            top: -80px;
+        }
+    }
+</style>
+
+<div class="uk-container uk-container-small uk-margin-large-top" uk-height-viewport="offset-top: true; offset-bottom: true">
+    <h1 class="uk-margin-remove-bottom">{{ page.title }}</h1>
+    <h3 class="uk-margin-remove-top">{{ page.subtitle }}</h3>
+    {% for sermon in site.data.government_series %}
+    <hr>
+    <a class="anchor" id="{{ sermon.title | slugify }}"></a>
+    <a href="/govtseries#{{ sermon.title | slugify }}"><h3>{{ sermon.title }}</h3></a>
+    <p><i>{{ sermon.preacher }}</i></p>
+    <audio controls>
+        <source src="{% unless sermon.audio contains '://' %}https://saintdavids.church/assets/{% endunless %}{{ sermon.audio }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <p><a target="_blank" href="{% unless sermon.audio contains '://' %}https://saintdavids.church/assets/{% endunless %}{{ sermon.audio }}" download="{% unless sermon.audio contains '://' %}https://saintdavids.church/assets/{% endunless %}{{ sermon.audio }}">Download audio</a></p>
+    {% endfor %}
+</div>
