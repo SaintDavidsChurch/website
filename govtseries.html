@@ -25,8 +25,8 @@ url: /sermons
     {% for sermon in site.data.government_series %}
     <hr>
     <a class="anchor" id="{{ sermon.title | slugify }}"></a>
-    <a href="/govtseries#{{ sermon.title | slugify }}"><h3>{{ sermon.title }}</h3></a>
-    <p><i>{{ sermon.preacher }}</i></p>
+    <a href="/govtseries#{{ sermon.title | slugify }}"><h3 class="uk-margin-remove-bottom">{{ sermon.title }}</h3></a>
+    <p class="uk-margin-remove-top"><i>{{ sermon.description }}</i></p>
     <audio controls>
         <source src="{% unless sermon.audio contains '://' %}https://saintdavids.church/assets/{% endunless %}{{ sermon.audio }}" type="audio/mpeg">
         Your browser does not support the audio element.
