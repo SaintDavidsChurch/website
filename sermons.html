@@ -5,31 +5,62 @@ url: /sermons
 ---
 
 <style>
-    a.anchor {
-        display: block;
-        position: relative;
-        visibility: hidden;
-    }
+  a.anchor {
+    display: block;
+    position: relative;
+    visibility: hidden;
+  }
 
-    @media (min-width: 960px) {
-        a.anchor {
-            top: -80px;
-        }
+  @media (min-width: 960px) {
+    a.anchor {
+      top: -80px;
     }
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 16px;
+  }
+
+  .align-right {
+    margin-left: auto;
+  }
 </style>
 
-<div class="uk-container uk-container-small uk-margin-large-top" uk-height-viewport="offset-top: true; offset-bottom: true">
+<div
+  class="uk-container uk-container-small uk-margin-large-top"
+  uk-height-viewport="offset-top: true; offset-bottom: true"
+>
+  <div class="row">
     <h1>Sermons</h1>
-    {% assign sorted = site.data.sermons | sort: 'date' | reverse %}
-    {% for sermon in sorted %}
-    <hr>
-    <a class="anchor" id="{{ sermon.date }}-{{ sermon.title | slugify }}"></a>
-    <a href="/sermons#{{ sermon.date }}-{{ sermon.title | slugify }}"><h3>{{ sermon.title }}</h3></a>
-    <p><i>{{ sermon.preacher }} | {{ sermon.date | date: '%B %d, %Y' }}</i></p>
-    <audio controls>
-        <source src="{% unless sermon.audio_file contains '://' %}https://saintdavids.church/assets/{% endunless %}{{ sermon.audio_file }}" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-    <p><a href="{% unless sermon.audio_file contains '://' %}https://saintdavids.church/assets/{% endunless %}{{ sermon.audio_file }}" download="{% unless sermon.audio_file contains '://' %}https://saintdavids.church/assets/{% endunless %}{{ sermon.audio_file }}">Download audio</a></p>
-    {% endfor %}
+    <span class="row align-right">
+      <a href="/distinctives">Distinctives series</a>
+      <a href="/govtseries">Civil Government series</a>
+    </span>
+  </div>
+  {% assign sorted = site.data.sermons | sort: 'date' | reverse %} {% for sermon
+  in sorted %}
+  <hr />
+  <a class="anchor" id="{{ sermon.date }}-{{ sermon.title | slugify }}"></a>
+  <a href="/sermons#{{ sermon.date }}-{{ sermon.title | slugify }}"
+    ><h3>{{ sermon.title }}</h3></a
+  >
+  <p><i>{{ sermon.preacher }} | {{ sermon.date | date: '%B %d, %Y' }}</i></p>
+  <audio controls>
+    <source
+      src="{% unless sermon.audio_file contains '://' %}https://saintdavids.church/assets/{% endunless %}{{ sermon.audio_file }}"
+      type="audio/mpeg"
+    />
+    Your browser does not support the audio element.
+  </audio>
+  <p>
+    <a
+      href="{% unless sermon.audio_file contains '://' %}https://saintdavids.church/assets/{% endunless %}{{ sermon.audio_file }}"
+      download="{% unless sermon.audio_file contains '://' %}https://saintdavids.church/assets/{% endunless %}{{ sermon.audio_file }}"
+      >Download audio</a
+    >
+  </p>
+  {% endfor %}
 </div>
