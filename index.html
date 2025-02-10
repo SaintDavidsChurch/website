@@ -35,6 +35,12 @@ layout: default
     </div>
 </div>
 
+<div class="uk-container uk-container-small uk-text-center uk-margin-xlarge-top uk-margin-xlarge-bottom">
+    {% for paragraph in site.data.site_copy.introduction %}
+    <p>{{ paragraph | markdownify }}</p>
+    {% endfor %}
+		
+</div>
 <div class="uk-overflow-hidden uk-background-norepeat uk-background-cover"
     style="background-image: url(./assets/images/full_shot.jpg);">
     <a class="anchor" id="about"></a>
